@@ -1,0 +1,194 @@
+country;years;beer_servings;spirit_servings;wine_servings;total_consume;continent;continent_abbr
+Afghanistan;61.25205;0;0;0;0;Asia;AS
+Albania;74.13;89;132;54;275;Europe;EU
+Algeria;71.82955;25;0;14;39;Africa;AF
+Andorra;82.65301;245;138;312;695;Europe;EU
+Angola;51.74093;217;57;45;319;Africa;AF
+Antigua and Barbuda;75.378;102;128;45;275;Central America;CA
+Argentina;76.31537;193;25;221;439;South America;SA
+Armenia;71.02699;21;179;11;211;Asia;AS
+Australia;82.58784;261;72;212;545;Oceania;AU
+Austria;81.31606;279;75;191;545;Europe;EU
+Azerbaijan;72.4111;21;46;5;72;Asia;AS
+The Bahamas;75.52535;122;176;149;447;Central America;CA
+Bahrain;77.24355;42;63;7;112;Asia;AS
+Bangladesh;70.71071;0;0;0;0;Asia;AS
+Barbados;78.14867;143;173;36;352;Central America;CA
+Belarus;71.80493;142;373;42;557;Europe;EU
+Belgium;80.48828;295;84;212;591;Europe;EU
+Belize;75.23206;263;114;8;385;Central America;CA
+Benin;58.839;34;4;13;51;Africa;AF
+Bhutan;68.38161;23;0;0;23;Asia;AS
+Bolivia;67.5944;167;41;8;216;South America;SA
+Bosnia and Herzegovina;77.27174;76;173;8;257;Europe;EU
+Botswana;64.15195;173;35;35;243;Africa;AF
+Brazil;75.17133;245;145;16;406;South America;SA
+Brunei;77.19981;31;2;1;34;Asia;AS
+Bulgaria;74.51299;231;252;94;577;Europe;EU
+Burkina Faso;58.56517;25;7;7;39;Africa;
+Burundi;56.20937;88;0;0;88;Africa;
+Cabo Verde;74.76584;144;56;16;216;Africa;
+Cambodia;72.61407;57;65;1;123;Asia
+Cameroon;56.57552;147;1;4;152;Africa
+Canada;81.97529;240;122;100;462;North America
+Central African Republic;51.43201;17;2;1;20;Africa
+Chad;51.7094;15;1;1;17;Africa
+Chile;80.05825;130;124;172;426;South America
+China;75.48225;79;192;8;279;Asia
+Colombia;78.06821;159;76;3;238;South America
+Comoros;61.86594;1;3;1;5;Africa
+Republic of the Congo;58.92405;76;1;9;86;Africa
+Cook Islands;75.82879;0;254;74;328;Oceania
+Costa Rica;79.31783;149;87;11;247;Central America
+Croatia;78.15862;230;87;254;571;Europe
+Cuba;78.29336;93;137;5;235;Central America
+Cyprus;81.88437;192;154;113;459;Asia
+Czech Republic;78.23041;361;170;134;665;Europe
+Ivory Coast;53.17685;37;1;7;45;Africa
+North Korea;69.93345;0;0;0;0;Asia
+Democratic Republic of the Congo;52.17266;32;3;1;36;Africa
+Denmark;79.90733;224;251;278;753;Europe
+Djibouti;61.75758;15;44;3;62;Africa
+Dominica;74.82867;52;286;26;364;Central America
+Dominican Republic;73.69259;193;147;9;349;Central America
+Ecuador;75.74088;162;74;3;239;South America
+Egypt;71.34473;6;4;1;11;Africa
+El Salvador;72.56444;52;69;2;123;Central America
+Equatorial Guinea;55.93278;92;0;233;325;Africa
+Eritrea;63.85941;18;0;0;18;Africa
+Estonia;76.89989;224;194;59;477;Europe
+Ethiopia;64.67994;20;3;0;23;Africa
+Fiji;69.56511;77;35;1;113;Oceania
+Finland;80.78438;263;133;97;493;Europe
+France;82.01347;127;151;370;648;Europe
+Gabon;63.65686;347;98;59;504;Africa
+Gambia;61.22207;8;0;1;9;Africa
+Georgia;74.43595;52;100;149;301;Asia
+Germany;80.94221;346;117;175;638;Europe
+Ghana;62.80416;31;3;10;44;Africa
+Greece;81.26017;133;112;218;463;Europe
+Grenada;73.27039;199;438;28;665;Central America
+Guatemala;71.96651;53;69;2;124;Central America
+Guinea;58.31797;9;0;2;11;Africa
+Guinea Bissau;53.89736;28;31;21;80;Africa
+Guyana;63.53513;93;302;1;396;South America
+Haiti;62.75648;1;326;1;328;Central America
+Honduras;74.44133;69;98;2;169;Central America
+Hungary;75.21944;234;215;185;634;South America
+Iceland;82.43079;233;61;78;372;Europe
+India;66.39526;9;114;0;123;Asia
+Indonesia;70.76871;5;1;0;6;Asia
+Iran;74.26825;0;0;0;0;Asia
+Iraq;70.36568;9;3;0;12;Asia
+Ireland;81.31725;313;118;165;596;Europe
+Israel;82.4614;63;69;9;141;Asia
+Italy;82.86323;85;42;237;364;Europe
+Jamaica;74.43981;82;97;9;188;Central America
+Japan;83.73987;77;202;16;295;Asia
+Jordan;73.86859;6;21;1;28;Asia
+Kazakhstan;67.95763;124;246;12;382;Asia
+Kenya;61.49628;58;22;2;82;Africa
+Kiribati;66.80363;21;34;1;56;Oceania
+Kuwait;78.38586;0;0;0;0;Asia
+Kyrgyzstan;69.41342;31;97;6;134;Asia
+Laos;66.36477;62;0;123;185;Asia
+Latvia;74.1265;281;216;62;559;Europe
+Lebanon;79.87961;20;55;31;106;Asia
+Lesotho;50.36242;82;29;0;111;Africa
+Liberia;62.02602;19;152;2;173;Africa
+Libya;75.33909;0;0;0;0;Africa
+Lithuania;74.30048;343;244;56;643;Europe
+Luxembourg;82.16427;236;133;271;640;Europe
+Madagascar;64.39765;26;15;4;45;Africa
+Malawi;59.58976;8;11;1;20;Africa
+Malaysia;74.05213;13;4;0;17;Asia
+Maldives;77.66563;0;0;0;0;Asia
+Mali;57.22025;5;1;1;7;Africa
+Malta;80.63323;149;100;120;369;Europe
+Marshall Islands;70.39505;0;0;0;0;Oceania
+Mauritania;63.18605;0;0;0;0;Africa
+Mauritius;74.13084;98;31;18;147;Africa
+Mexico;75.37576;238;68;5;311;North America
+Micronesia (Federated States of);69.12877;62;50;18;130;Oceania
+Monaco;82.15714;0;0;0;0;Europe
+Mongolia;67.70721;77;189;8;274;Asia
+Montenegro;75.93555;31;114;128;273;Europe
+Morocco;70.97952;12;6;10;28;Africa
+Mozambique;54.18395;47;18;5;70;Africa
+Myanmar;65.95232;5;1;0;6;Asia
+Namibia;68.10928;376;3;1;380;Africa
+Nauru;78.87914;49;0;8;57;Oceania
+Nepal;68.47222;5;6;0;11;Asia
+Netherlands;81.37485;251;88;190;529;Europe
+New Zealand;82.08273;203;79;175;457;Oceania
+Nicaragua;73.64848;78;118;1;197;Central America
+Niger;59.29464;3;2;1;6;Africa
+Nigeria;54.54945;42;5;2;49;Africa
+Niue;74.59361;188;200;7;395;Oceania
+Norway;81.75625;169;71;129;369;Europe
+Oman;76.13046;22;16;1;39;Asia
+Pakistan;65.57568;0;0;0;0;Asia
+Palau;73.06908;306;63;23;392;Oceania
+Panama;77.34814;285;104;18;407;Central America
+Papua New Guinea;62.36177;44;39;1;84;Oceania
+Paraguay;74.72476;213;117;74;404;South America
+Peru;77.38308;163;160;21;344;South America
+Philippines;68.83433;71;186;1;258;Asia
+Poland;76.85128;343;215;56;614;Europe
+Portugal;80.95487;194;67;339;600;Europe
+Qatar;79.35993;1;42;7;50;Asia
+South Korea;81.61579;140;16;9;165;Asia
+Moldova;70.46939;109;226;18;353;Europe
+Romania;74.38423;297;122;167;586;Europe
+Russia;69.29092;247;326;73;646;Asia
+Rwanda;65.47727;43;2;0;45;Africa
+Saint Kitts and Nevis;74.16277;194;205;32;431;Central America
+Saint Lucia;75.18542;171;315;71;557;Central America
+Saint Vincent and the Grenadines;73.90679;120;221;11;352;Central America
+Samoa;73.44813;105;18;24;147;Oceania
+San Marino;83.0731;0;0;0;0;Europe
+Sao Tome and Principe;67.01282;56;38;140;234;Africa
+Saudi Arabia;75.72633;0;5;0;5;Asia
+Senegal;64.49203;9;1;7;17;Africa
+Republic of Serbia;74.69285;283;131;127;541;Europe
+Seychelles;73.83582;157;25;51;233;Africa
+Sierra Leone;45.98883;25;3;2;30;Africa
+Singapore;82.87928;60;12;11;83;Asia
+Slovakia;76.28677;196;293;116;605;Europe
+Slovenia;80.39226;270;51;276;597;Europe
+Solomon Islands;68.72803;56;11;1;68;Oceania
+Somalia;54.42672;0;0;0;0;Africa
+South Africa;60.4067;225;76;81;382;Africa
+Spain;82.6227;284;157;112;553;Europe
+Sri Lanka;74.99951;16;104;0;120;Asia
+Sudan;63.04385;8;13;0;21;Africa
+Suriname;77.19422;128;178;7;313;South America
+Swaziland;53.11098;90;2;2;94;Africa
+Sweden;81.80135;152;60;186;398;Europe
+Switzerland;83.13744;185;100;280;565;Europe
+Syria;75.65637;5;35;16;56;Asia
+Tajikistan;68.58981;2;15;0;17;Asia
+Thailand;75.00789;36;6;1;43;Asia
+Macedonia;75.71539;99;258;1;358;Europe
+East Timor;66.89677;1;1;4;6;Asia
+Togo;58.42831;36;2;19;57;Africa
+Tonga;71.48373;36;21;5;62;Oceania
+Trinidad and Tobago;70.53188;197;156;7;360;Central America
+Tunisia;76.07588;51;3;20;74;Africa
+Turkey;75.38882;51;22;7;80;Asia
+Turkmenistan;63.57362;19;71;32;122;Asia
+Tuvalu;67.98926;6;41;9;56;Oceania
+Uganda;58.54477;45;9;0;54;Africa
+Ukraine;70.85694;206;237;45;488;Europe
+United Arab Emirates;76.63969;16;135;5;156;Asia
+United Kingdom;81.00252;219;126;195;540;Europe
+United States of America;78.7946;115;35;220;370;North America
+Uruguay;77.43123;249;158;84;491;South America
+Uzbekistan;69.20962;25;101;8;134;Asia
+Vanuatu;72.2857;21;18;11;50;Oceania
+Venezuela;75.92431;333;100;3;436;South America
+Vietnam;75.68709;111;2;1;114;Asia
+Yemen;64.25762;6;0;0;6;Asia
+Zambia;58.4628;32;19;4;55;Africa
+Zimbabwe;58.72677;64;18;4;86;Africa
+United Republic of Tanzania;62.68134;36;6;1;43;Africa
