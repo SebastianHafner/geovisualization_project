@@ -1,7 +1,7 @@
-class ChoroplethMap extends Object {
+class DotMap extends Object {
   
   UnfoldingMap map;
-  List<Marker> countryMarkers;
+  List<Marker> siteMarkers;
   Data data;
   
   // background color, default color white
@@ -27,7 +27,7 @@ class ChoroplethMap extends Object {
   
   
   // constructor
-  ChoroplethMap(processing.core.PApplet p, Data d, int tlX, int tlY, int w, int h) {
+  DotMap(processing.core.PApplet p, Data d, int tlX, int tlY, int w, int h) {
     super(tlX,tlY,w,h);
     // set up map
     this.map = new UnfoldingMap(p, tlX, tlY, tlX+w, tlY+h);
@@ -38,11 +38,11 @@ class ChoroplethMap extends Object {
     MapUtils.createDefaultEventDispatcher(p, this.map);
     
     // load country polygons and adds them as markers
-    List<Feature> countries = GeoJSONReader.loadData(p, "countries.geo.json");
-    this.countryMarkers = MapUtils.createSimpleMarkers(countries);
+    List<Feature> sites = GeoJSONReader.loadData(p, "sites_points_sn7.geojson");
+    this.siteMarkers = MapUtils.createSimpleMarkers(sites);
     
     // adding markers to map
-    this.map.addMarkers(this.countryMarkers);
+    this.map.addMarkers(this.siteMarkers);
     
     // adding data
     this.data = d;
@@ -50,44 +50,6 @@ class ChoroplethMap extends Object {
     //
     this.boundaries = new ROI(tlX,tlY,tlX+w,tlY+h);
     
-    // assign colors to countries according to data
-    this.setSelectionMode(false);
-    
-  }
-  
-  // function to draw markers
-  private void shadeCountries(boolean shade) {
-    Colormap colormap = new Colormap();
-    float min = 40f;
-    float max = 90f;
-    float step = (max-min)/nclasses;
-    float value = 0;
-    for (Marker marker : this.countryMarkers) {
-      // Find data for country of the current marker
-      
-      String country = marker.getStringProperty("name");
-      DataEntry dataEntry = this.data.get(country);
-      
-      
-      if (dataEntry != null && dataEntry.years != null) {
-        if (shade) {
-          // find correct class and set the color of marker accordingly
-          for (int i=0;i<nclasses;i++) {
-            if (dataEntry.years>min+i*step && dataEntry.years<=min+(i+1)*step) {
-              marker.setColor(colormap.getColor(i));
-            }
-          }               
-        } else {
-          marker.setColor(color(100, 120));
-        }
-               
-      } else {
-        // No value available
-        marker.setColor(color(100, 120));
-      }
-      marker.setStrokeColor(datac);
-      marker.setStrokeWeight(1);
-    }
   }
   
   // funciton to select a marker
@@ -138,42 +100,12 @@ class ChoroplethMap extends Object {
   public void updateMarkers() {
     // Deselect all marker
     for (Marker marker : this.map.getMarkers()) {
-      //marker.setSelected(false);
-      String country = marker.getStringProperty("name");
-      DataEntry dataEntry = this.data.get(country);
-      // if the country is in the hash map
-      if (dataEntry != null) {
-        if (selectionMode) {
-        // coloring is dependent on mode 
-          if (dataEntry.selected) {
-            marker.setColor(color(204, 102, 0));
-            //marker.showLabel = true;
-                  
-          } else {
-            marker.setColor(color(100, 120));
-            
-          }
-        } else {
-          if (dataEntry.selected) {
-            marker.setStrokeColor(color(204, 102, 0));
-            marker.setStrokeWeight(2);
-            
-          } else {
-            marker.setStrokeColor(datac);
-            marker.setStrokeWeight(1);
-            
-            
-          }          
-        }
-      }
+      marker.setColor(color(100, 120));
+      marker.setStrokeColor(datac);
+      marker.setStrokeWeight(1);
     }
   }
   
-  public void setSelectionMode(boolean input) {
-    this.selectionMode = input;
-    if (selectionMode) {shadeCountries(false); }
-    else { this.shadeCountries(true); }   
-  }
   
   public void setZoomLevel(int zoom) {
     this.map.setZoomRange(zoom,zoom);

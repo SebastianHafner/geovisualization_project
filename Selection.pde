@@ -2,9 +2,7 @@ class Selection extends Object {
   
   int nFields;
   
-  Ternaryplot tplot;
   Scatterplot splot;
-  ParallelCoordinatesPlot pplot;
   
   
   Field[] fields;
