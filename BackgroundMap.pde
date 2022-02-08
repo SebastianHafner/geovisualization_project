@@ -6,8 +6,8 @@ class BackgroundMap extends Object {
   // background color, default color white
   color backgroundc = color(37,37,37);
   
-  // color for axes and non selected data points, default color black
-  color datac = color(136,136,136);
+  color strokeColor = color(136,136,136);
+  color fillColor = color(229, 229, 229);
   
   // color of selected points, default color orange
   color datacSelected = color(204, 102, 0);
@@ -18,7 +18,7 @@ class BackgroundMap extends Object {
   
   
   // constructor
-  BackgroundMap(processing.core.PApplet p, Data d, int tlX, int tlY, int w, int h) {
+  BackgroundMap(processing.core.PApplet p, int tlX, int tlY, int w, int h) {
     super(tlX,tlY,w,h);
     // set up map
     this.map = new UnfoldingMap(p, tlX, tlY, tlX+w, tlY+h);
@@ -34,41 +34,11 @@ class BackgroundMap extends Object {
     
     // adding markers to map
     this.map.addMarkers(this.countryMarkers);
+    this.colorMarkers();
     
     //
     this.boundaries = new ROI(tlX,tlY,tlX+w,tlY+h);
     
-  }
-  
-  // function to draw markers
-  private void shadeCountries(boolean shade) {
-    for (Marker marker : this.countryMarkers) {
-      // Find data for country of the current marker
-      String country = marker.getStringProperty("name");
-      marker.setColor(color(100, 120));
-      marker.setStrokeColor(datac);
-      marker.setStrokeWeight(1);
-    }
-  }
-  
-  // funciton to select a marker
-  public void select(int x, int y) {
-    if (boundaries.in(x,y)) {
-      // deselect all countries first
-      for (int i=0;i<data.selected.length;i++) { data.selected[i] = false; }
-      
-      // select the corresponding marker
-      Marker marker = this.map.getFirstHitMarker(mouseX, mouseY);
-      if (marker != null) {
-        String country = marker.getStringProperty("name");
-        Integer index = data.countries.get(country);
-        // if the country is in the hash map set it as selected
-        if (index != null) {
-          data.selected[index] = true;
-          this.updateMarkers();
-        } 
-      }  
-    }
   }
   
     
@@ -87,11 +57,12 @@ class BackgroundMap extends Object {
 
   }
   
-    // function to update markers according to selection and selection mode
-  public void updateMarkers() {
+   // function to update markers according to selection and selection mode
+  public void colorMarkers() {
     // Deselect all marker
     for (Marker marker : this.map.getMarkers()) {
-      marker.setStrokeColor(datac);
+      marker.setColor(fillColor);
+      marker.setStrokeColor(strokeColor);
       marker.setStrokeWeight(1);
     }
   }

@@ -9,6 +9,7 @@ BackgroundMap bmap;
 DotMap dmap;
 Scatterplot splot;
 Data data;
+QualitativeResults qr;
 int x1, x2, y1, y2;
 ROI roi = new ROI();
 Plot[] plots;
@@ -21,20 +22,23 @@ void setup() {
   smooth();
   
   // reading data
-  data = new Data("alcohol_data.csv");
+  data = new Data("geovisualization_project_data.csv");
   
   // setting up map
-  bmap = new BackgroundMap(this,data,0,0,width,height);
-  dmap = new DotMap(this,data,0,0,width,height);
-  
+  bmap = new BackgroundMap(this,width/4,0,width*3/4,height);
+  dmap = new DotMap(this,data,width/4,0,width*3/4,height);
   
   // setting up scatter plot
-  splot = new Scatterplot(data.total,data.years,data.selected,width/5+100,height/3*2,width/4,height/3);
+  splot = new Scatterplot(data.precision,data.recall,data.selected,0,0,width/4,width/4);
   splot.setXlabel("Recall");
   splot.setYlabel("Precision");
-  splot.setYmin(40f); splot.setYmax(90f);
-  splot.setXmin(0f); splot.setXmax(800f);
+  splot.setYmin(0f); splot.setYmax(100f);
+  splot.setXmin(0f); splot.setXmax(100f);
   
+  // qualitative results
+  qr = new QualitativeResults(0, height/2, width/4, height/2);
+  qr.updateAOI("L15-0457E-1135N_1831_3648_13");
+  qr.draw();
   
   plots = new Plot[]{splot};
 }
@@ -42,6 +46,10 @@ void setup() {
 void draw() {
   background(217, 225, 232);
   noStroke();
+  
+  fill(255,255,255);
+  rect(0,0, width/5,height);
+  
   for (Plot plot:plots) { plot.draw(); }
 
   // Draw map tiles and country markers
@@ -64,7 +72,7 @@ void mouseDragged() {
   // selecting data for all plots  
   for (Plot plot:plots) { plot.selectROI(roi); }
   // updating choropleth markers
-  bmap.updateMarkers();  
+  dmap.updateMarkers();  
 }
 
 void mouseReleased() {
@@ -75,11 +83,11 @@ void mouseReleased() {
   // selecting points for roi
   for (Plot plot:plots) { plot.selectROI(roi); }
   // updating markers according to selection
-  bmap.updateMarkers();  
+  dmap.updateMarkers();  
 }
 
 void mouseClicked() {
-  bmap.select(mouseX,mouseY);
+  dmap.select(mouseX,mouseY);
 }
 
 

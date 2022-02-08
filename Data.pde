@@ -4,19 +4,17 @@ import java.util.Arrays;
 class Data {
   
   // hashmap to store the indices
-  public HashMap<String,Integer> countries;
+  public HashMap<String,Integer> aoiIDs;
   
   // array for selection/interactivity
   public boolean[] selected;
   
-  public String[] continent;
+  public String[] region;
    
   // arrays to store the data
-  public Float[] total;
-  public Float[] years;
-  public Float[] beer;
-  public Float[] spirit;
-  public Float[] wine;
+  public Float[] f1;
+  public Float[] precision;
+  public Float[] recall;
   
   
   // constructor
@@ -31,56 +29,51 @@ class Data {
   // helper function to load the alcohole consumption data from csv file
   private void loadData(String fileName) {
   
-    this.countries = new HashMap<String,Integer>();
+    this.aoiIDs = new HashMap<String,Integer>();
     String[] input = loadStrings(fileName);
     String header = input[0];
     String[] rows = Arrays.copyOfRange(input, 1, input.length);
     
-    this.total = new Float[rows.length];
-    this.years = new Float[rows.length];
-    this.beer = new Float[rows.length];
-    this.spirit = new Float[rows.length];
-    this.wine = new Float[rows.length];
+    this.f1 = new Float[rows.length];
+    this.precision = new Float[rows.length];
+    this.recall = new Float[rows.length];
     this.selected = new boolean[rows.length];
-    this.continent = new String[rows.length];
+    this.region = new String[rows.length];
     
     for (Integer i=0;i<rows.length;i++) {
       // Reads country name and population density value from CSV row
       String row = rows[i];
       String[] columns = row.split(";");
+      println("test");
       
-      this.years[i] = Float.parseFloat(columns[1]);
-      this.beer[i] = Float.parseFloat(columns[2]);
-      this.spirit[i] = Float.parseFloat(columns[3]);
-      this.wine[i] = Float.parseFloat(columns[4]);
-      this.total[i] = Float.parseFloat(columns[5]);
+      this.f1[i] = Float.parseFloat(columns[2]) * 100;
+      this.precision[i] = Float.parseFloat(columns[3]) * 100;
+      this.recall[i] = Float.parseFloat(columns[4]) * 100;
       
       this.selected[i] = false;
       
-      this.continent[i] = columns[6];
+      this.region[i] = columns[5];
       
-      this.countries.put(columns[0],i);
+      this.aoiIDs.put(columns[1],i);
         
     }
     }
     
     
     // returns a data entry object according to the country
-    public DataEntry get(String country) {
-      Integer index = this.countries.get(country);
+    public DataEntry get(String aoiID) {
+      Integer index = this.aoiIDs.get(aoiID);
       if (index == null) {
         return null;
       }
       
       DataEntry d = new DataEntry();
-      d.countryName =  country;
-      d.total = this.total[index];
-      d.years = this.years[index];
-      d.beerServings = this.beer[index];
-      d.spiritServings = this.spirit[index];
-      d.wineServings = this.wine[index];
+      d.aoiID =  aoiID;
+      d.f1 = this.f1[index];
+      d.precision = this.precision[index];
+      d.recall = this.recall[index];
       d.selected = this.selected[index];
-      d.continent = this.continent[index];
+      d.region = this.region[index];
       
       return d;
     }

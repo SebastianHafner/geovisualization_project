@@ -22,8 +22,6 @@ class DotMap extends Object {
   // explorer mode on or off;
   boolean explorerMode = false;
   
-  // number of classes
-  int nclasses = 5;
   
   
   // constructor
@@ -32,9 +30,9 @@ class DotMap extends Object {
     // set up map
     this.map = new UnfoldingMap(p, tlX, tlY, tlX+w, tlY+h);
     Location center = new Location(30.0f, 50.0f);
-    map.setZoomRange(3,3);
-    map.zoomAndPanTo(center, 3);
-    map.setPanningRestriction(center, 0);
+    map.setZoomRange(2,2);
+    map.zoomAndPanTo(center, 2);
+    map.setPanningRestriction(center, 2);
     MapUtils.createDefaultEventDispatcher(p, this.map);
     
     // load country polygons and adds them as markers
@@ -61,8 +59,8 @@ class DotMap extends Object {
       // select the corresponding marker
       Marker marker = this.map.getFirstHitMarker(mouseX, mouseY);
       if (marker != null) {
-        String country = marker.getStringProperty("name");
-        Integer index = data.countries.get(country);
+        String aoiID = marker.getStringProperty("aoi_id");
+        Integer index = data.aoiIDs.get(aoiID);
         // if the country is in the hash map set it as selected
         if (index != null) {
           data.selected[index] = true;
@@ -80,14 +78,12 @@ class DotMap extends Object {
       // select the corresponding marker
       Marker marker = this.map.getFirstHitMarker(mouseX, mouseY);
       if (marker != null) {
-        String country = marker.getStringProperty("name");
-        Integer index = data.countries.get(country);
+        String aoiID = marker.getStringProperty("aoi_id");
+        Integer index = data.aoiIDs.get(aoiID);
         // if the country is in the hash map set it as selected
         if (index != null) {
           textAlign(LEFT);
-          text(country,mouseX+40,mouseY);
-          text("Life expectancy: "+Math.round(data.years[index]),mouseX+40,mouseY+20);
-          text("Alcohol consumpiton: "+Math.round(data.total[index]),mouseX+40,mouseY+40);
+          text(aoiID,mouseX+40,mouseY);
         } 
       }  
     }
