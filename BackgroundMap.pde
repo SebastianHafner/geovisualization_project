@@ -7,7 +7,7 @@ class BackgroundMap extends Object {
   color backgroundc = color(37,37,37);
   
   color strokeColor = color(136,136,136);
-  color fillColor = color(229, 229, 229);
+  color fillColor = color(255, 255, 255);
   
   // color of selected points, default color orange
   color datacSelected = color(204, 102, 0);
@@ -22,7 +22,7 @@ class BackgroundMap extends Object {
     super(tlX,tlY,w,h);
     // set up map
     this.map = new UnfoldingMap(p, tlX, tlY, tlX+w, tlY+h);
-    Location center = new Location(30.0f, 50.0f);
+    Location center = new Location(45.0f, 70.0f);
     map.setZoomRange(2,2);
     map.zoomAndPanTo(center, 2);
     map.setPanningRestriction(center, 0);

@@ -82,15 +82,26 @@ class Scatterplot extends Plot {
   // function to draw the data points  
   public void drawData() {
     
-    // loop over all data to draw points
+    // loop over all data to draw unselected points
     for (int i=0;i<this.x.length;i++) {      
       // set color according to selection
-      if (!this.selection[i]) { strokeWeight(pWeight); stroke(datac); }
-      else { strokeWeight(pWeight); stroke(datacSelected); }
-      
-      // draw point
-      noSmooth();
-      point(getX(i), getY(i));
+      if (!this.selection[i]) {
+        strokeWeight(pWeight);
+        stroke(datac);
+        // draw point
+        noSmooth();
+        point(getX(i), getY(i));
+      }
+    }
+        // loop over all data to draw selected points
+    for (int i=0;i<this.x.length;i++) {      
+      if (this.selection[i]) {
+        strokeWeight(pWeight);
+        stroke(datacSelected);
+        // draw point
+        noSmooth();
+        point(getX(i), getY(i));
+      }
     }
   }
   

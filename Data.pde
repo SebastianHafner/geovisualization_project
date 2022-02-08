@@ -9,6 +9,7 @@ class Data {
   // array for selection/interactivity
   public boolean[] selected;
   
+  public String[] name;
   public String[] region;
    
   // arrays to store the data
@@ -38,6 +39,7 @@ class Data {
     this.precision = new Float[rows.length];
     this.recall = new Float[rows.length];
     this.selected = new boolean[rows.length];
+    this.name = new String[rows.length];
     this.region = new String[rows.length];
     
     for (Integer i=0;i<rows.length;i++) {
@@ -52,6 +54,7 @@ class Data {
       
       this.selected[i] = false;
       
+      this.name[i] = columns[1];
       this.region[i] = columns[5];
       
       this.aoiIDs.put(columns[1],i);
@@ -73,6 +76,7 @@ class Data {
       d.precision = this.precision[index];
       d.recall = this.recall[index];
       d.selected = this.selected[index];
+      d.name = this.name[index];
       d.region = this.region[index];
       
       return d;

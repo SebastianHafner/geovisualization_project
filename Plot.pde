@@ -2,7 +2,7 @@
 abstract class Plot extends Object {
   
   // background color, default color white
-  color backgroundc = color(217, 225, 232);
+  color backgroundc = color(255, 255, 255);
   
   // color for axes and non selected data points, default color black
   color datac = color(40,44,55);

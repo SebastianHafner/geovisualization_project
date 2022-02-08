@@ -8,7 +8,7 @@ class DotMap extends Object {
   color backgroundc = color(37,37,37);
   
   // color for axes and non selected data points, default color black
-  color datac = color(136,136,136);
+  color datac = color(40,44,55);
   
   // color of selected points, default color orange
   color datacSelected = color(204, 102, 0);
@@ -29,7 +29,7 @@ class DotMap extends Object {
     super(tlX,tlY,w,h);
     // set up map
     this.map = new UnfoldingMap(p, tlX, tlY, tlX+w, tlY+h);
-    Location center = new Location(30.0f, 50.0f);
+    Location center = new Location(45.0f, 70.0f);
     map.setZoomRange(2,2);
     map.zoomAndPanTo(center, 2);
     map.setPanningRestriction(center, 2);
@@ -53,7 +53,7 @@ class DotMap extends Object {
   // funciton to select a marker
   public void select(int x, int y) {
     if (boundaries.in(x,y)) {
-      // deselect all countries first
+      // deselect all aois first
       for (int i=0;i<data.selected.length;i++) { data.selected[i] = false; }
       
       // select the corresponding marker
@@ -73,40 +73,36 @@ class DotMap extends Object {
     
   public void draw() {
     map.draw();
-    // adding details on demand
-    if (boundaries.in(mouseX,mouseY)) {
-      // select the corresponding marker
-      Marker marker = this.map.getFirstHitMarker(mouseX, mouseY);
-      if (marker != null) {
-        String aoiID = marker.getStringProperty("aoi_id");
-        Integer index = data.aoiIDs.get(aoiID);
-        // if the country is in the hash map set it as selected
-        if (index != null) {
-          textAlign(LEFT);
-          text(aoiID,mouseX+40,mouseY);
-        } 
-      }  
-    }
-
   }
   
   
   
     // function to update markers according to selection and selection mode
   public void updateMarkers() {
-    // Deselect all marker
+    
+        // Deselect all marker
     for (Marker marker : this.map.getMarkers()) {
-      marker.setColor(color(100, 120));
-      marker.setStrokeColor(datac);
-      marker.setStrokeWeight(1);
+      String aoiID = marker.getStringProperty("aoi_id");
+      Integer index = data.aoiIDs.get(aoiID);
+      // if the country is in the hash map set it as selected
+      if (index != null) {
+        if (data.selected[index]) {
+          marker.setColor(datacSelected);
+        } else {
+          marker.setColor(datac);
+        }
+        marker.setStrokeColor(datac);
+        marker.setStrokeWeight(1);
+      } 
     }
   }
+  
   
   
   public void setZoomLevel(int zoom) {
     this.map.setZoomRange(zoom,zoom);
     this.map.zoomLevel(zoom); 
-    Location center = new Location(30.0f, 50.0f);
+    Location center = new Location(45.0f, 70.0f);
     if (zoom<4) { this.map.setPanningRestriction(center,0); }
     else { this.map.setPanningRestriction(center,10000); }
   }
